@@ -6,7 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function Carda() {
+export default function Carda(props) {
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -17,16 +18,15 @@ export default function Carda() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          AD COPY
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {props.ad_creative_bodies}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small"><a href={props.ad_snapshot_url} target="_blank">Check the original post</a></Button>
+        <Button size="small"><a href={"http://"+props.ad_creative_link_captions} target="_blank">Call to action link</a></Button>
       </CardActions>
     </Card>
   );

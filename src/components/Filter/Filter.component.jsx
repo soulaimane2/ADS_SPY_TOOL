@@ -1,7 +1,9 @@
 import { Autocomplete, Button, Checkbox, Divider, FormControlLabel, FormGroup, FormLabel, Slider, TextField } from "@mui/material";
 import { useState } from "react";
+import api from "../../api/api";
+import { ACCESS_TOKEN } from "../../secret/token";
 
-const Filter = () => {
+const Filter = ({setData}) => {
 
     const [formik, SetFormik] = useState({
         terms: "",
@@ -10,8 +12,16 @@ const Filter = () => {
         Languages: []
     })
 
-    const SearchTermHandler = (e) => {
-        SetFormik(e.target.value)
+
+    const filterIt = async (formik) => {
+
+        const {data} = await api.get("/ads_archive",{ params : {
+            access_token: ACCESS_TOKEN,
+            ad_reached_countries: formik.Languages,
+            search_terms: formik.terms,
+            fields:"ad_creation_time,ad_creative_bodies,ad_creative_link_captions,ad_snapshot_url,demographic_distribution,estimated_audience_size"
+        }})
+        setData(data)
     }
 
     return ( <>
@@ -66,7 +76,7 @@ const Filter = () => {
 <br />
     <Divider />
     <br />  
-      <Button onClick={()=>console.log(formik)} variant="contained" fullWidth> Filter </Button>
+      <Button onClick={() => filterIt(formik)} variant="contained" fullWidth> Filter </Button>
     </> );
 }
  
