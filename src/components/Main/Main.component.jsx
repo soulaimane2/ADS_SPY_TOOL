@@ -9,7 +9,7 @@ const Main = () => {
 
     return ( <div style={{width: "100%"}}>
         <div style={{textAlign: "center"}}>
-        <h4> This is just a MVP </h4>
+        <h4> This is just an MVP </h4>
         <p> I hope you would like this small MVP once we have a contract we can move forward to more complex features.  </p>
         <q> thank you </q><br /><q> Soulaimane </q>
         </div>
