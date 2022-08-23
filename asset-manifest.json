@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/ADS_SPY_TOOL/static/js/main.f6dcded2.js",
+    "main.js": "/ADS_SPY_TOOL/static/js/main.0098b224.js",
     "index.html": "/ADS_SPY_TOOL/index.html",
-    "main.f6dcded2.js.map": "/ADS_SPY_TOOL/static/js/main.f6dcded2.js.map"
+    "main.0098b224.js.map": "/ADS_SPY_TOOL/static/js/main.0098b224.js.map"
   },
   "entrypoints": [
-    "static/js/main.f6dcded2.js"
+    "static/js/main.0098b224.js"
   ]
 }
